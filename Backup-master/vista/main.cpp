@@ -218,7 +218,7 @@ void leerDatosEstudiantes() {
 
 void crearDatosEstudiantes() {
 	string codigo, nombres, apellidos, direccion, fecha_nacimiento;
-	int telefono, idSangre, id = 0;
+	int telefono = 0, id_tipo_sangre = 0, id = 0;
 
 	cin.ignore();
 	cout << "Ingrese el codigo del estudiante: ";
@@ -245,9 +245,9 @@ void crearDatosEstudiantes() {
 	
 
 	cout << "Ingresa el id_tipo_sangre del estudiante: ";
-	cin >> idSangre;
+	cin >> id_tipo_sangre;
 
-	Estudiante e = Estudiante(codigo, nombres, apellidos, direccion, telefono, fecha_nacimiento, id, idSangre);
+	Estudiante e = Estudiante(codigo, nombres, apellidos, direccion, telefono, fecha_nacimiento, id_tipo_sangre, id);
 	e.crear();
 	e.leer();
 }
@@ -257,11 +257,10 @@ void actualizarDatosEstudiantes() {
 	e.leer();
 
 	string codigo, nombres, apellidos, direccion, fecha_nacimiento;
-	int telefono, idSangre, id = 0;
+	int telefono = 0, id_tipo_sangre = 0, id = 0;
 
 	cout << "Ingrese ID: ";
 	cin >> id;
-	cin.ignore();
 	cin.ignore();
 	cout << "Ingrese el codigo del estudiante: ";
 	getline(cin, codigo);
@@ -275,23 +274,22 @@ void actualizarDatosEstudiantes() {
 	cout << "Ingrese la direccion del estudiante: ";
 	getline(cin, direccion);
 
-	cout << "Ingrese la fecha de nacimiento del estudiante: ";
-	getline(cin, fecha_nacimiento);
-
 	cout << "Ingresa el telefono del estudiante: ";
 	cin >> telefono;
 
+
+	cin.ignore();
+
+	cout << "Ingrese la fecha de nacimiento del estudiante: ";
+	getline(cin, fecha_nacimiento);
+
+
+
 	cout << "Ingresa el id_tipo_sangre del estudiante: ";
-	cin >> idSangre;
+	cin >> id_tipo_sangre;
 
-
-	// preguntar sobre este orden, se determina en el constructor de clientes?
-	e = Estudiante(codigo, nombres, apellidos, direccion, telefono, fecha_nacimiento, id, idSangre);
-
-
+	e = Estudiante(codigo, nombres, apellidos, direccion, telefono, fecha_nacimiento, id_tipo_sangre, id);
 	e.actualizar();
-
-	// OPCION PARA LEER PALABRAS, CASE 2
 	e.leer();
 }
 
