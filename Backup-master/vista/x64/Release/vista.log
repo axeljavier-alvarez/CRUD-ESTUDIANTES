@@ -1,0 +1,9 @@
+﻿  main.cpp
+C:\Users\axel5\OneDrive\Desktop\INGENIERA UMG\TERCER SEMESTRE\PROGRAMACION\EJERCICIO CRUD\Backup-master\vista\main.cpp(303,16): warning C4101: 'idSangre': variable local sin referencia
+C:\Users\axel5\OneDrive\Desktop\INGENIERA UMG\TERCER SEMESTRE\PROGRAMACION\EJERCICIO CRUD\Backup-master\vista\main.cpp(303,6): warning C4101: 'telefono': variable local sin referencia
+  Generando código
+  2 of 174 functions ( 1.1%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    6 functions had inline decision re-evaluated but remain unchanged
+  Generación de código finalizada
+  vista.vcxproj -> C:\Users\axel5\OneDrive\Desktop\INGENIERA UMG\TERCER SEMESTRE\PROGRAMACION\EJERCICIO CRUD\Backup-master\Release\vista.exe
