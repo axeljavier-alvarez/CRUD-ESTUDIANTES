@@ -3,29 +3,37 @@
 #include <iostream>
 #include <string>
 #include "ConexionBD.h"
-#include "Persona.h"
 
 using namespace std;
 
-class Estudiante : Persona {
-private: int id = 0;
+class Estudiante {
+
+private: 
+	string codigo, nombres, apellidos, direccion, fecha_nacimiento;
+	int telefono = 0, tipo_sangre = 0, id = 0;
 public:
 	Estudiante() {}
 
-	Estudiante(string codigo, string nom, string ape, string dir, int tel, string fn, int ts, int i) : 
-		Persona(codigo, nom, ape, dir, tel, fn, ts) {
+	Estudiante(string co, string nom, string ape, string dir, int tel, string fn, int ts, int i) {
+		codigo = co;
+		nombres = nom;
+		apellidos = ape;
+		direccion = dir;
+		telefono = tel;
+		fecha_nacimiento = fn;
+		tipo_sangre = ts;
 		id = i;
 
 	}
 	//SET
 	void setId(int i) { id = i; }
-	void setCodigo(string codigo) { codigo = codigo; }
-	void setNombres(string nom) { nom = nom; }
-	void setApellidos(string ape) { ape = ape; }
-	void setDireccion(string dir) { dir = dir; }
-	void setTelefono(int tel) { tel = tel; }
-	void setFecha_Nacimiento(string fn) { fn = fn; }
-	void setTipo_sangre(int ts) { ts = ts; }
+	void setCodigo(string co) { codigo = co; }
+	void setNombres(string nom) { nombres = nom; }
+	void setApellidos(string ape) { apellidos = ape; }
+	void setDireccion(string dir) { direccion = dir; }
+	void setTelefono(int tel) { telefono = tel; }
+	void setFecha_Nacimiento(string fn) { fecha_nacimiento = fn; }
+	void setTipo_sangre(int ts) { tipo_sangre = ts; }
 	//GET
 	int getId() { return id; }
 	string getCodigo() { return codigo; }
@@ -104,8 +112,11 @@ public:
 		string t = to_string(telefono);
 		string ts = to_string(tipo_sangre);
 		string ii = to_string(id);
-		if (cn.getConectar()) {
-			string actualizar = "update estudiantes set codigo='" + codigo + "', nombres='" + nombres + "', apellidos='" + apellidos + "',direccion='" + direccion + "',telefono=" + t + ",fecha_nacimiento='" + fecha_nacimiento + "',tipo_sangre=" + ts + " where id_estudiante =" + ii + "";
+		if (cn.getConectar()) {  
+
+
+			string  actualizar = "update estudiantes set codigo = " + codigo + " nombres ='" + nombres + "' apellidos = '" + apellidos + "' direccion = '" + direccion + "' telefono =" + t + " fecha_nacimiento='" + fecha_nacimiento + " id_tipo_sangre ='" + ts + "'' where id_estudiante = " + ii + "";
+
 			const char* i = actualizar.c_str();
 			q_estado = mysql_query(cn.getConectar(), i);
 			if (!q_estado)

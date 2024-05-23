@@ -176,9 +176,9 @@ void menuEstudiantes() {
 	bool repetir = true;
 
 	do {
-		cout << "\n\n\t\t\tMENU DEL CLIENTE" << endl;
+		cout << "\n\n\t\t\tMENU DE ESTUDIANTES" << endl;
 		cout << "\t\t\t----------------" << endl;
-		cout << "\n\t1. LEER DATOS CLIENTE" << endl;
+		cout << "\n\t1. LEER DATOS" << endl;
 		cout << "\n\t2. CREAR DATOS" << endl;
 		cout << "\n\t3. ACTUALIZAR DATOS" << endl;
 		cout << "\n\t4. ELIMINAR DATOS" << endl;
@@ -284,8 +284,7 @@ void actualizarDatosEstudiantes() {
 	getline(cin, fecha_nacimiento);
 
 
-
-	cout << "Ingresa el id_tipo_sangre del estudiante: ";
+	cout << "Ingresa el id del tipo de sangre: ";
 	cin >> id_tipo_sangre;
 
 	e = Estudiante(codigo, nombres, apellidos, direccion, telefono, fecha_nacimiento, id_tipo_sangre, id);
